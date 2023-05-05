@@ -1,3 +1,21 @@
+
+CREATE TABLE usuario(
+
+    usuario varchar(50),
+    nombres varchar(50),
+    apellidos varchar(50),
+    telefono varchar(50),
+    correo varchar(50),
+    cargo varchar(50),
+    estatus INTEGER
+
+
+);
+
+
+
+
+---------------------------------------------------------------------------
 CREATE TABLE repotenciacion(
 
     id SERIAL PRIMARY KEY,
