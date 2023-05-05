@@ -279,7 +279,7 @@
                 }
             
             break;
-        case '11':#busqueda historial
+        case '11':#busqueda historial s
             # code...
             echo json_encode($incidente->historial($_POST['fecha_inicio'],$_POST['fecha_final']));
             break;
