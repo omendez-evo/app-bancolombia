@@ -125,12 +125,13 @@
 		}
 		public function exportar_tabla_historial($fecha_inicio,$fecha_final){
 
-			$originalDate = $fecha_inicio;
-			$fecha_inicio = date("Y/m/d", strtotime($originalDate));
-			$originalDate = $fecha_final;
-			$fecha_final = date("Y/m/d", strtotime($originalDate));
-
 			if($fecha_inicio!="" && $fecha_final!=""){
+
+				$originalDate = $fecha_inicio;
+				$fecha_inicio = date("Y/m/d", strtotime($originalDate));
+				$originalDate = $fecha_final;
+				$fecha_final = date("Y/m/d", strtotime($originalDate));
+
 				$extra="AND punto_atencion.fecha_fin BETWEEN '".$fecha_inicio."' AND '".$fecha_final."'";
 			}else{$extra="";}
 			$sql= "SELECT punto_atencion.id as id,punto_atencion.titulo as titulo,punto_atencion.descripcion as descripcion,afectado,fecha_fin,estado.estado as estado
@@ -145,12 +146,13 @@
 		}
 		public function exportar_tabla_historial_documentacion($fecha_inicio,$fecha_final){
 
-			$originalDate = $fecha_inicio;
-			$fecha_inicio = date("Y/m/d", strtotime($originalDate));
-			$originalDate = $fecha_final;
-			$fecha_final = date("Y/m/d", strtotime($originalDate));
-
 			if($fecha_inicio!="" && $fecha_final!=""){
+
+				$originalDate = $fecha_inicio;
+				$fecha_inicio = date("Y/m/d", strtotime($originalDate));
+				$originalDate = $fecha_final;
+				$fecha_final = date("Y/m/d", strtotime($originalDate));
+
 				$extra="AND punto_atencion.fecha_fin BETWEEN '".$fecha_inicio."' AND '".$fecha_final."'";
 			}else{$extra="";}
 			$sql= "SELECT titulo,avances,fecha_avance,estado.estado as estado,usuario
@@ -231,14 +233,15 @@
 		}
 		public function historial($fecha_inicio,$fecha_final){
 
-			$originalDate = $fecha_inicio;
-			$fecha_inicio = date("Y/m/d", strtotime($originalDate));
-			$originalDate = $fecha_final;
-			$fecha_final = date("Y/m/d", strtotime($originalDate));
-
 			$arrayReturn = array();
 			$_SESSION['array']="";
 			if($fecha_inicio!="" && $fecha_final!=""){
+
+				$originalDate = $fecha_inicio;
+				$fecha_inicio = date("Y/m/d", strtotime($originalDate));
+				$originalDate = $fecha_final;
+				$fecha_final = date("Y/m/d", strtotime($originalDate));
+
 				$extra="AND punto_atencion.fecha_fin BETWEEN '".$fecha_inicio."' AND '".$fecha_final."'";
 			}else{$extra="";}
 			$sql= "SELECT punto_atencion.id,punto_atencion.titulo,fecha_fin,estado.estado,prioridad.prioridad as prioridad

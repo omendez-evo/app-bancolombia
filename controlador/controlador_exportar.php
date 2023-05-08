@@ -8,8 +8,6 @@
     require_once 'PHPExcel.php';
     require_once 'PHPExcel/IOFactory.php';
 
-
-
     $incidente= new incidente();
     $oc=new oc();
     $problema= new problema();

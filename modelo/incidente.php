@@ -127,12 +127,13 @@
 		}
 		public function exportar_tabla_historial($fecha_inicio,$fecha_final){
 
-			$originalDate = $fecha_inicio;
-			$fecha_inicio = date("Y/m/d", strtotime($originalDate));
-			$originalDate = $fecha_final;
-			$fecha_final = date("Y/m/d", strtotime($originalDate));
-
 			if($fecha_inicio!="" && $fecha_final!=""){
+
+				$originalDate = $fecha_inicio;
+				$fecha_inicio = date("Y/m/d", strtotime($originalDate));
+				$originalDate = $fecha_final;
+				$fecha_final = date("Y/m/d", strtotime($originalDate));
+
 				$extra="AND incidente.fecha_fin BETWEEN '".$fecha_inicio."' AND '".$fecha_final."'";
 			}else{$extra="";}
 			$sql= "SELECT incidente.id,incidente.descripcion,incidente.afectados,prioridad.prioridad,estado.estado,area.area,grupo.grupo,usuario.usuario AS responsable,fecha_inicio,fecha_fin
@@ -151,12 +152,13 @@
 		}
 		public function exportar_tabla_historial_documentacion($fecha_inicio,$fecha_final){
 
-			$originalDate = $fecha_inicio;
-			$fecha_inicio = date("Y/m/d", strtotime($originalDate));
-			$originalDate = $fecha_final;
-			$fecha_final = date("Y/m/d", strtotime($originalDate));
-
 			if($fecha_inicio!="" && $fecha_final!=""){
+
+				$originalDate = $fecha_inicio;
+				$fecha_inicio = date("Y/m/d", strtotime($originalDate));
+				$originalDate = $fecha_final;
+				$fecha_final = date("Y/m/d", strtotime($originalDate));
+
 				$extra="AND incidente.fecha_fin BETWEEN '".$fecha_inicio."' AND '".$fecha_final."'";
 			}else{$extra="";}
 			$sql= "SELECT id_incidente as id,documentacion,fecha
@@ -271,12 +273,13 @@
 		public function historial($fecha_inicio,$fecha_final){
 			$arrayReturn = array();
 
-			$originalDate = $fecha_inicio;
-			$fecha_inicio = date("Y/m/d", strtotime($originalDate));
-			$originalDate = $fecha_final;
-			$fecha_final = date("Y/m/d", strtotime($originalDate));
-			
 			if($fecha_inicio!="" && $fecha_final!=""){
+
+				$originalDate = $fecha_inicio;
+				$fecha_inicio = date("Y/m/d", strtotime($originalDate));
+				$originalDate = $fecha_final;
+				$fecha_final = date("Y/m/d", strtotime($originalDate));
+
 				$extra="WHERE id_estado not in(1,2) and incidente.fecha_inicio BETWEEN '".$fecha_inicio."' AND '".$fecha_final."' AND incidente.proyecto=".$_SESSION['proyecto']."";
 			}else{$extra="WHERE id_estado not in(1,2) AND incidente.proyecto=".$_SESSION['proyecto']."";}
 			$sql= "SELECT incidente.id,incidente.descripcion,fecha_fin,estado.estado,usuario.usuario AS responsable
